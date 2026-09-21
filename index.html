@@ -79,7 +79,7 @@
             text-align: center;
             padding: 82px 20px 76px;
             background-image:
-                linear-gradient(180deg, rgba(20, 35, 22, 0.18), rgba(25, 41, 27, 0.06) 48%, rgba(23, 38, 25, 0.42) 100%);
+                linear-gradient(180deg, rgba(20, 35, 22, 0.18) 0%, rgba(25, 41, 27, 0.06) 48%, rgba(57, 74, 53, 0.32) 100%);
             background-size: 100% 100%;
             background-position: center top;
             border-radius: var(--radius);
@@ -93,8 +93,14 @@
             content: '';
             position: absolute;
             inset: auto 0 0;
-            height: 130px;
-            background: linear-gradient(180deg, transparent, rgba(36, 54, 37, 0.36));
+            height: 220px;
+            background: linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(57, 74, 53, 0.05) 35%,
+                rgba(57, 74, 53, 0.18) 70%,
+                rgba(57, 74, 53, 0.38) 100%
+            );
             pointer-events: none;
             z-index: 0;
         }
