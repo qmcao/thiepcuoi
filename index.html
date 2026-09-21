@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Minh Cao & Duyen Ho — Hanoi Wedding Q&A</title>
     <!-- Google Fonts matching the invitation page -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,7 +267,7 @@
 
         .accordion-item.active .accordion-content {
             padding: 0 22px 20px;
-            max-height: 600px;
+            max-height: 1400px;
         }
 
         .accordion-item.active .accordion-icon {
@@ -287,6 +290,51 @@
             margin-top: 12px;
             border-radius: 2px;
             font-size: 0.88rem;
+        }
+
+        .trip-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin: 16px 0 14px;
+        }
+
+        .trip-photo {
+            position: relative;
+            min-height: 220px;
+            overflow: hidden;
+            border-radius: 3px;
+            background: #d8d0bd;
+            box-shadow: 0 8px 20px rgba(37, 50, 39, 0.16);
+        }
+
+        .trip-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .trip-photo:hover img {
+            transform: scale(1.025);
+        }
+
+        .trip-photo figcaption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 28px 12px 9px;
+            color: #fffaf0;
+            background: linear-gradient(transparent, rgba(16, 27, 18, 0.82));
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
         }
 
         /* Footer */
@@ -315,6 +363,8 @@
             .accordion-header { font-size: 0.95rem; padding: 16px; }
             .accordion-content { padding-left: 16px; padding-right: 16px; }
             .accordion-item.active .accordion-content { padding-left: 16px; padding-right: 16px; }
+            .trip-gallery { grid-template-columns: 1fr; }
+            .trip-photo { min-height: 210px; }
         }
     </style>
 </head>
@@ -344,6 +394,7 @@
                 <button class="tab-btn" onclick="scrollToSection('transport')">🚕 Getting Around</button>
                 <button class="tab-btn" onclick="scrollToSection('stay')">🏨 Hotels & Currency</button>
                 <button class="tab-btn" onclick="scrollToSection('local')">🌸 Weather & Activities</button>
+                <button class="tab-btn" onclick="scrollToSection('trips')">🧭 Trip Options</button>
             </div>
 
             <!-- SECTION 1: SCHEDULE & INFO -->
@@ -428,7 +479,7 @@
                 </div>
             </div>
 
-            <!-- SECTION 2: VISAS & FLIGHTS -->
+            <!-- VISAS & FLIGHTS -->
             <div class="qa-section" id="travel">
                 <h2 class="section-title serif">✈️ Visas & Airport Arrival</h2>
 
@@ -557,6 +608,99 @@
                             <li><strong>Sightseeing:</strong> Stroll around Hoan Kiem Lake, visit Ngoc Son Temple, the Temple of Literature, and Hoa Lo Prison. 📸</li>
                             <li><strong>Food & Drink:</strong> Enjoy authentic hot <em>Phở</em>, sample <em>Bún Chả</em> (grilled pork with noodles), and sip traditional <em>Egg Coffee</em> at Café Giảng. ☕🍲</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTIONAL FIVE-DAY GROUP TRIPS -->
+            <div class="qa-section" id="trips">
+                <h2 class="section-title serif">🧭 Optional 5-Day Group Trips</h2>
+
+                <div class="highlight-box" style="margin: 0 0 18px;">
+                    <strong>Planning note:</strong> These are three proposed five-day itineraries to explore Vietnam. Approximate quotes are provided per person in USD, converted at <strong>$1 USD = 26,000 VND</strong> and rounded to the nearest dollar. The total package price is inclusive of accommodations, local transport, and sightseeing tickets, excluding flights.
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Option 1: Ninh Binh & Sapa — approximately $283/person 🏔️</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A scenic northern Vietnam itinerary combining Ninh Binh's temples and limestone landscapes with mountain activities in Sapa.</p>
+                        <div class="trip-gallery" aria-label="Ninh Binh and Sapa highlights">
+                            <figure class="trip-photo">
+                                <img src="images/trips/option-1/Trang-An-in-Ninh-Binh.jpg" alt="Limestone karsts and river boats in Trang An, Ninh Binh" loading="lazy" decoding="async">
+                                <figcaption>Trang An, Ninh Binh</figcaption>
+                            </figure>
+                            <figure class="trip-photo">
+                                <img src="images/trips/option-1/sapa.jpg" alt="Mountain landscape and terraced fields in Sapa" loading="lazy" decoding="async">
+                                <figcaption>Sapa</figcaption>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><strong>Day 1:</strong> Depart Hanoi at 8:00 AM for Bai Dinh Pagoda and Trang An, with lunch included; overnight near Tam Coc.</li>
+                            <li><strong>Day 2:</strong> Early Hang Mua climb and cycling around Tam Coc; board a 9:00 PM private-cabin sleeper bus to Sapa.</li>
+                            <li><strong>Day 3:</strong> Arrive around 6:00 AM, visit Fansipan with cable car and summit buffet, then explore Cat Cat Village.</li>
+                            <li><strong>Day 4:</strong> Guided trek through Y Linh Ho, Lao Chai, and Ta Van villages, with lunch included.</li>
+                            <li><strong>Day 5:</strong> Visit O Quy Ho Pass, Heaven's Gate, Love Waterfall, and Silver Waterfall; return toward Hanoi by sleeper bus at 3:00 PM.</li>
+                        </ul>
+                        <div class="highlight-box"><strong>Key inclusions:</strong> Ground transportation, one private sleeper cabin per guest, four-star hotels, listed entrance tickets, local guides, Fansipan cable car, and specified lunches. The Muong Hoa train, summit funicular, dinners, and other meals marked “on your own” are not included.</div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Option 2: Da Nang, Hoi An & Saigon — approximately $258/person 🌴</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A mix of central Vietnam's coast and heritage sites followed by city sightseeing in Ho Chi Minh City (Saigon).</p>
+                        <div class="trip-gallery" aria-label="Hoi An and Saigon highlights">
+                            <figure class="trip-photo">
+                                <img src="images/trips/option-2/hoi_an.jpeg" alt="Lantern-lit historic streets in Hoi An" loading="lazy" decoding="async">
+                                <figcaption>Hoi An</figcaption>
+                            </figure>
+                            <figure class="trip-photo">
+                                <img src="images/trips/option-2/saigon.jpeg" alt="City view in Ho Chi Minh City, also known as Saigon" loading="lazy" decoding="async">
+                                <figcaption>Saigon</figcaption>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><strong>Day 1:</strong> Early transfer to the Hanoi airport; fly to Da Nang, visit Son Tra Peninsula and Linh Ung Pagoda, then spend the evening in Hoi An with dinner included.</li>
+                            <li><strong>Day 2:</strong> Full visit to Ba Na Hills with buffet lunch, followed by free beach time.</li>
+                            <li><strong>Day 3:</strong> Bay Mau Coconut Forest basket-boat experience and lunch; fly to Ho Chi Minh City for a free evening.</li>
+                            <li><strong>Day 4:</strong> Guided city tour featuring Independence Palace, the cathedral area, the War Remnants Museum, lunch, and shopping.</li>
+                            <li><strong>Day 5:</strong> Free morning for sightseeing or shopping, then fly back to Hanoi in the afternoon.</li>
+                        </ul>
+                        <div class="highlight-box"><strong>Key inclusions:</strong> Airport and sightseeing transfers, four-star central hotels, Ba Na Hills buffet, Hoi An dinner, basket-boat admission and lunch, plus the guided Saigon city tour. <strong>Domestic flights are self-arranged and not included.</strong></div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Option 3: Ninh Binh & Saigon — approximately $228/person 🌿</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A nature-focused stay in Ninh Binh followed by a shorter Ho Chi Minh City experience.</p>
+                        <div class="trip-gallery" aria-label="Ninh Binh and Saigon highlights">
+                            <figure class="trip-photo">
+                                <img src="images/trips/option-3/Trang-An-in-Ninh-Binh.jpg" alt="Limestone karsts and river boats in Trang An, Ninh Binh" loading="lazy" decoding="async">
+                                <figcaption>Trang An, Ninh Binh</figcaption>
+                            </figure>
+                            <figure class="trip-photo">
+                                <img src="images/trips/option-3/saigon.jpeg" alt="City view in Ho Chi Minh City, also known as Saigon" loading="lazy" decoding="async">
+                                <figcaption>Saigon</figcaption>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><strong>Day 1:</strong> Depart Hanoi at 8:00 AM for Bai Dinh Pagoda and Trang An, with lunch included; overnight near Tam Coc.</li>
+                            <li><strong>Day 2:</strong> Guided exploration of Cuc Phuong National Park, its forest ecosystem, and wildlife conservation area.</li>
+                            <li><strong>Day 3:</strong> Early Hang Mua climb and cycling around Tam Coc; transfer to Noi Bai Airport and fly to Ho Chi Minh City.</li>
+                            <li><strong>Day 4:</strong> Guided city tour featuring Independence Palace, the cathedral area, the War Remnants Museum, lunch, and shopping.</li>
+                            <li><strong>Day 5:</strong> Free morning for sightseeing or shopping, then fly back to Hanoi in the afternoon.</li>
+                        </ul>
+                        <div class="highlight-box"><strong>Key inclusions:</strong> Ground transportation, four-star accommodations, listed Ninh Binh activities and lunches, a local guide at Cuc Phuong, and the guided Saigon city tour. <strong>Domestic flights are self-arranged and not included.</strong></div>
                     </div>
                 </div>
             </div>
