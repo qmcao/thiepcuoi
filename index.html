@@ -173,12 +173,25 @@
             overflow-x: auto;
             padding: 0 0 16px;
             margin-bottom: 36px;
-            scrollbar-width: none;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-gold) rgba(28, 45, 30, 0.42);
             border-bottom: 1px solid rgba(215, 197, 164, 0.35);
+            scroll-behavior: smooth;
+            overscroll-behavior-x: contain;
         }
 
         .nav-tabs::-webkit-scrollbar {
-            display: none;
+            height: 7px;
+        }
+
+        .nav-tabs::-webkit-scrollbar-track {
+            background: rgba(28, 45, 30, 0.42);
+            border-radius: 10px;
+        }
+
+        .nav-tabs::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 10px;
         }
 
         .tab-btn {
@@ -352,6 +365,11 @@
             margin-bottom: 8px;
         }
 
+        footer p {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
         @media (max-width: 600px) {
             body { background-size: 100% 100%, auto 1846px; }
             .page-frame { margin: 6px; padding: 5px; }
@@ -380,7 +398,7 @@
             <div class="info-bar">
                 <div class="info-pill">📅 Feb 27, 2027</div>
                 <div class="info-pill">📍 National Convention Center, Hanoi</div>
-                <div class="info-pill">✉️ RSVP on Invitation Page 💌</div>
+                <div class="info-pill">✉️ RSVP on Invitation Page </div>
             </div>
         </header>
 
@@ -389,12 +407,12 @@
 
             <!-- Navigation Filter Tabs -->
             <div class="nav-tabs">
-                <button class="tab-btn active" onclick="scrollToSection('general')">✨ Schedule & Info</button>
-                <button class="tab-btn" onclick="scrollToSection('travel')">✈️ Visas & Flights</button>
-                <button class="tab-btn" onclick="scrollToSection('transport')">🚕 Getting Around</button>
-                <button class="tab-btn" onclick="scrollToSection('stay')">🏨 Hotels & Currency</button>
-                <button class="tab-btn" onclick="scrollToSection('local')">🌸 Weather & Activities</button>
-                <button class="tab-btn" onclick="scrollToSection('trips')">🧭 Trip Options</button>
+                <button class="tab-btn active" onclick="scrollToSection('general')"> Schedule & Info</button>
+                <button class="tab-btn" onclick="scrollToSection('travel')"> Visas & Flights</button>
+                <button class="tab-btn" onclick="scrollToSection('transport')"> Getting Around</button>
+                <button class="tab-btn" onclick="scrollToSection('stay')"> Hotels & Currency</button>
+                <button class="tab-btn" onclick="scrollToSection('local')"> Weather & Activities</button>
+                <button class="tab-btn" onclick="scrollToSection('trips')"> Trip Options</button>
             </div>
 
             <!-- SECTION 1: SCHEDULE & INFO -->
@@ -403,7 +421,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>When and where is the wedding? 🏰</span>
+                        <span>When and where is the wedding?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -413,34 +431,39 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>What is the event schedule? 🥂</span>
+                        <span>What is the event schedule?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul>
                             <li><strong>Friday, Feb 26:</strong> Welcome Dinner 🍲 (More details coming soon and will be updated closer to the date!).</li>
-                            <li><strong>Saturday, Feb 27 @ 3:45 PM:</strong> Guest arrival for Outdoor Vow Ceremony. 🌿</li>
-                            <li><strong>Saturday, Feb 27 @ 4:00 PM:</strong> Outdoor Vow Ceremony. 💍</li>
-                            <li><strong>Saturday, Feb 27 @ 5:30 PM:</strong> Guest Arrival for Main Indoor Reception. ✨</li>
-                            <li><strong>Saturday, Feb 27 @ 6:30 PM:</strong> Main Wedding Ceremony & Dinner (Indoor). 🍾</li>
-                            <li><strong>Saturday, Feb 27 @ 9:30 PM:</strong> After Party! 🎉💃</li>
+                            <li>
+                                <strong>Saturday, Feb 27:</strong>
+                                <ul>
+                                    <li><strong>3:45 PM:</strong> Guest arrival for Outdoor Vow Ceremony.</li>
+                                    <li><strong>4:00 PM:</strong> Outdoor Vow Ceremony.</li>
+                                    <li><strong>5:30 PM:</strong> Guest Arrival for Main Indoor Reception.</li>
+                                    <li><strong>6:30 PM:</strong> Main Wedding Ceremony & Dinner (Indoor).</li>
+                                    <li><strong>9:30 PM:</strong> After Party! 🎉💃</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>What is the dress code? 👗👔</span>
+                        <span>What is the dress code? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>The formal dress code applies specifically to guests attending the <strong>outdoor Vow Ceremony at 4:00 PM</strong> 🌸. Please note that the Vow Ceremony will take place outdoors, while the main wedding ceremony and reception following will take place indoors.</p>
+                        <p>The formal dress code color is in the main invitation and applies specifically to guests attending the <strong>outdoor Vow Ceremony at 4:00 PM</strong> 🌸. Please note that the Vow Ceremony will take place outdoors, while the main wedding ceremony and reception following will take place indoors.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Can I bring a date / Plus-One? 💕</span>
+                        <span>Can I bring a date / Plus-One? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -450,31 +473,31 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Is there a gift registry? 🧧</span>
+                        <span>Is there a gift registry? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>Your presence at our celebration in Hanoi is truly the greatest gift we could ask for! We do not have a formal gift registry. In honoring Vietnamese tradition, if you wish to celebrate us with a gift, traditional <strong>"Lucky Money" (tiền mừng)</strong> in a nice envelope is customary and warmly appreciated. ❤️</p>
+                        <p>Your presence at our celebration in Hanoi is truly the greatest gift we could ask for! We do not have a formal gift registry. In honoring Vietnamese tradition, if you wish to celebrate us with a gift, traditional <strong>"Lucky Money" (tiền mừng)</strong> in a nice envelope is customary and warmly appreciated. ❤️🧧</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>How do I RSVP / Reserve? ✉️</span>
+                        <span>How do I RSVP / Reserve? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>Please reserve your attendance by filling out the questions at the bottom of the main invitation page link. 📝</p>
+                        <p>Please reserve your attendance by filling out the questions at the bottom of the main invitation page link. </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>When should I arrive in Hanoi? ✈️</span>
+                        <span>When should I arrive in Hanoi? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>Flights from the US take roughly 18 to 22+ hours total, and Hanoi is <strong>12–15 hours ahead</strong> of US time zones. We strongly recommend landing in Hanoi by <strong>Wednesday, Feb 24, or early Thursday, Feb 25</strong> at the latest to adjust to jet lag prior to Friday's Welcome Dinner! 😴</p>
+                        <p>Flights from the US take roughly 18 to 22+ hours total, and Hanoi is <strong>12–15 hours ahead</strong> of US time zones. We strongly recommend landing in Hanoi by <strong>Wednesday, Feb 24, or early Thursday, Feb 25</strong> at the latest to adjust to jet lag prior to Friday's Welcome Dinner! </p>
                     </div>
                 </div>
             </div>
@@ -485,13 +508,13 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>How do I apply for a Vietnam E-Visa? 📄</span>
+                        <span>How do I apply for a Vietnam E-Visa? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <p>US passport holders require an E-Visa prior to entry.</p>
                         <ul>
-                            <li><strong>Where to Apply:</strong> Directly on the official Vietnam Immigration Portal.</li>
+                            <li><strong>Where to Apply:</strong> Directly on the <a href="https://evisa.gov.vn" target="_blank" rel="noopener noreferrer">official Vietnam Immigration Portal</a>.</li>
                             <li><strong>Cost:</strong> $25 USD (single entry).</li>
                             <li><strong>Timeline:</strong> Processing takes ~3–5 business days, but we recommend applying <strong>3–4 weeks before departure</strong>.</li>
                         </ul>
@@ -500,23 +523,14 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>What is the Airport "Fast Track" check-in option? 🏃‍♂️</span>
+                        <span>What is the Airport "Fast Track" check-in option? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>Immigration lines at Hanoi (HAN) Airport can be long during peak arrival hours. You can pre-book an optional <strong>VIP Fast Track Arrival Service</strong> (via travel platforms like Klook or Viator for ~$25 USD). An agent will meet you at your gate with a sign and guide you through priority immigration lanes. ✨</p>
+                        <p>Immigration lines at Hanoi (HAN) Airport can be long during peak arrival hours. You can pre-book an optional <strong>VIP Fast Track Arrival Service</strong> (via travel platforms like Klook or Viator for ~$25 USD). An agent will meet you at your gate with a sign and guide you through priority immigration lanes. </p>
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span>TSA PreCheck & Global Entry 🎫</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>When flying out of US airports, ensure your <strong>TSA PreCheck</strong> or <strong>Global Entry Known Traveler Number (KTN)</strong> is linked to your airline ticket reservation for expedited US airport security.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- SECTION 3: TRANSPORTATION -->
@@ -525,30 +539,38 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Getting from Noi Bai Airport (HAN) to the city 🚗</span>
+                        <span>Getting from Noi Bai Airport (HAN) to the city </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <p>While we are not arranging direct shuttle buses, getting into town is very easy:</p>
                         <ul>
-                            <li><strong>Rideshare:</strong> <em>Uber does not operate in Vietnam.</em> Download <strong>Grab</strong> (Southeast Asia's Uber equivalent) before you land and set up your US credit card. 📱</li>
-                            <li><strong>Travel Times:</strong> Airport to Old Quarter (Pho Co/Hoan Kiem) is ~40–50 mins. Airport to Cau Giay area is ~30–40 mins.</li>
+                            <li><strong>Rideshare:</strong> <em>Uber does not operate in Vietnam.</em> Download <strong>Grab or XanhSM</strong> (Southeast Asia's Uber equivalent) before you land and set up your US credit card. Remember to always add promotion code before paying, there are alot! You can also ask the hotel if they offer shuttle, it is very affordable. </li>
+                            <li><strong>Travel Times:</strong> Airport to Old Quarter (Pho Co/Hoan Kiem) is ~40–50 mins. Airport to Cau Giay area is ~30–40 mins. The price should be around 300,000 - 500,000 VND ~ 15 USD - 25 USD.</li>
                         </ul>
-                        <div class="highlight-box">
-                            <strong>Shared Rides 🚘:</strong> Closer to February, we will gather arrival times to help connect guests landing at similar times to ride together!
-                        </div>
+
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Cellular Data & eSIM Options 📶</span>
+                        <span>Ordering Food with Delivery Apps </span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Food delivery in Vietnam is very affordable, and the apps frequently offer promotions. We recommend using <strong>GrabFood or ShopeeFood</strong> for convenient delivery from a wide variety of local restaurants.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Cellular Data & eSIM Options </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul>
-                            <li><strong>Airport Wi-Fi:</strong> Free Wi-Fi is available in the airport terminal upon arrival.</li>
-                            <li><strong>eSIM (Recommended):</strong> Purchase a digital eSIM via apps like Airalo, Holafly, or Maya Mobile prior to flying for instant 4G/5G data upon landing. 📲</li>
+                            <li><strong>Airport Wi-Fi:</strong> Free Wi-Fi is available in the airport terminal upon arrival, <strong>but it is very slow </strong>. </li>
+                            <li><strong>eSIM (Recommended):</strong> Purchase a digital eSIM via apps like Airalo, Holafly, or Maya Mobile prior to flying for instant 4G/5G data upon landing. </li>
                             <li><strong>Physical SIM Card:</strong> Local SIM cards (Viettel or Vinaphone) can be purchased at airport kiosks after customs for ~$10–$15 USD.</li>
                         </ul>
                     </div>
@@ -561,24 +583,26 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Where should I stay in Hanoi? 🛌</span>
+                        <span>Where should I stay in Hanoi? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>We recommend booking accommodations in or near the <strong>Old Quarter (Phố Cổ) / Hoàn Kiếm Lake area</strong> for a historic, walkable, and vibrant experience. 🏙️</p>
-                        <p style="margin-top: 10px;">If you prefer apartment/residence hotels, we personally recommend <strong>22Housing Residence Hotel</strong>, where we have stayed and had a great experience! ✨</p>
+                        <p>We recommend booking accommodations in or near the <strong>Old Quarter (Phố Cổ) / Hoàn Kiếm Lake area</strong> for a historic, walkable, and vibrant experience. </p>
+                        <p style="margin-top: 10px;">If you prefer apartment/residence hotels, we personally recommend <strong>22Housing Residence Hotel</strong>. We only stayed once but had a great experience! If you want other options, we are happy to help you looking for one. </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>How do I pay for things (Cash vs. Card)? 💵</span>
+                        <span>How do I pay for things (Cash vs. Card)? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul>
-                            <li><strong>Cash (Vietnamese Dong - VND):</strong> Recommended for street food, traditional markets, and small purchases. You can exchange USD at airport kiosks or draw cash at local ATMs using debit cards. 🪙</li>
-                            <li><strong>Credit Cards:</strong> Major hotels, sit-down restaurants, and shops accept Visa and Mastercard. 💳</li>
+                            <li><strong>Cash (Vietnamese Dong - VND):</strong> Recommended for street food, traditional markets, and small purchases. You can exchange USD at airport kiosks or draw cash at local ATMs using debit cards. </li>
+                            <li><strong>Credit Cards:</strong> Major hotels, sit-down restaurants, and shops accept Visa and Mastercard. </li>
+                            <li><strong>Apple Pay & Contactless:</strong> Accepted at many modern stores, supermarket chains, and restaurants that support contactless card terminals. Please check the if your bank charges extra for conversion rate </li>
+                            <li><strong>QR Code Payments & Digital Wallets:</strong> QR code scanning is the most popular payment method across Vietnam. Consider downloading Moreta Pay for convenient scanning QR code.</li>
                         </ul>
                     </div>
                 </div>
@@ -590,23 +614,23 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>What is the weather like in Hanoi in February? 🌤️</span>
+                        <span>What is the weather like in Hanoi in February? </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p>February brings late winter / early spring weather to Hanoi. Expect cool temperatures between <strong>59°F and 70°F (15°C – 21°C)</strong>. It can occasionally be misty or chilly in the evenings, so pack light jacket layers and an umbrella! 🧥☔</p>
+                        <p>February brings late winter / early spring weather to Hanoi. Expect cool temperatures between <strong>59°F and 70°F (15°C – 21°C)</strong>. It can occasionally be misty or chilly in the evenings, so pack light jacket layers and an umbrella! </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Things to see & eat in Hanoi 🍜☕</span>
+                        <span>Things to see & eat in Hanoi </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul>
-                            <li><strong>Sightseeing:</strong> Stroll around Hoan Kiem Lake, visit Ngoc Son Temple, the Temple of Literature, and Hoa Lo Prison. 📸</li>
-                            <li><strong>Food & Drink:</strong> Enjoy authentic hot <em>Phở</em>, sample <em>Bún Chả</em> (grilled pork with noodles), and sip traditional <em>Egg Coffee</em> at Café Giảng. ☕🍲</li>
+                            <li><strong>Sightseeing:</strong> Sightseeing: Walk around <strong> Hoàn Kiếm Lake </strong> and the <strong> Old Quarter </strong>; on weekends, the streets around the lake become a lively pedestrian zone. Visit <strong> Ngọc Sơn Temple </strong>, and <strong> Hỏa Lò Prison </strong> if you’re interested in history. For a more relaxed afternoon, stop by the famous <strong> Hanoi Train Street cafés </strong>, browse small local shops, and wander through the French-colonial streets of central Hanoi.</li>
+                            <li><strong>Food & Drink:</strong> Hanoi is best experienced by trying a little of everything. Start with a hot bowl of <strong> Phở </strong>, then try <strong> Bún Chả </strong>, <strong> Bánh Cuốn </strong>, or <strong> Chả Cá Lã Vọng </strong>, and finish with an <strong> Egg Coffee at Café Giảng </strong>. For the full experience, don’t skip the street-food stalls and tiny local cafés. There is also food tour options from local, where they take you around to eat, only cost from $25 - $40.</li>
                         </ul>
                     </div>
                 </div>
@@ -617,12 +641,12 @@
                 <h2 class="section-title serif">🧭 Optional 5-Day Group Trips</h2>
 
                 <div class="highlight-box" style="margin: 0 0 18px;">
-                    <strong>Planning note:</strong> These are three proposed five-day itineraries to explore Vietnam. Approximate quotes are provided per person in USD, converted at <strong>$1 USD = 26,000 VND</strong> and rounded to the nearest dollar. The total package price is inclusive of accommodations, local transport, and sightseeing tickets, excluding flights.
+                    <strong>Planning note:</strong> These are three proposed five-day itineraries to explore Vietnam. Approximate quotes are provided per person in USD, converted at <strong>$1 USD ~ 26,000 VND</strong>.  The total package price is inclusive of accommodations, local transport, and sightseeing tickets, excluding flights and food (sometimes breakfast and lunch might be included).
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Option 1: Ninh Binh & Sapa — approximately $283/person 🏔️</span>
+                        <span>Option 1: Ninh Binh & Sapa — approximately $290+/person </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -650,7 +674,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Option 2: Da Nang, Hoi An & Saigon — approximately $258/person 🌴</span>
+                        <span>Option 2: Da Nang, Hoi An & Saigon — approximately $260+/person </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -678,7 +702,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        <span>Option 3: Ninh Binh & Saigon — approximately $228/person 🌿</span>
+                        <span>Option 3: Ninh Binh & Saigon — approximately $230+/person </span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -710,7 +734,11 @@
         <!-- Footer -->
         <footer>
             <h2 class="serif">✨ Minh & Duyen ✨</h2>
-            <p>We can't wait to celebrate with you in Hanoi! ❤️</p>
+            <p>
+                We can't wait to celebrate with you in Hanoi!<br>
+                Having our favorite people together in one place is the greatest gift we could ever ask for.<br>
+                Thank you for making the journey to celebrate this next chapter with us! 🕊️💕
+            </p>
         </footer>
     </div>
 
@@ -722,6 +750,19 @@
                 item.classList.toggle('active');
             });
         });
+
+        const navTabs = document.querySelector('.nav-tabs');
+
+        navTabs.addEventListener('wheel', wheelEvent => {
+            if (Math.abs(wheelEvent.deltaY) <= Math.abs(wheelEvent.deltaX)) return;
+
+            const previousScrollPosition = navTabs.scrollLeft;
+            navTabs.scrollLeft += wheelEvent.deltaY;
+
+            if (navTabs.scrollLeft !== previousScrollPosition) {
+                wheelEvent.preventDefault();
+            }
+        }, { passive: false });
 
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
