@@ -11,16 +11,17 @@
     
     <style>
         :root {
-            --bg-color: #FAF4F0;
-            --card-bg: #FFFFFF;
-            --accent-gold: #C5A059;
-            --accent-rose: #E8D3C5;
-            --accent-rose-light: #FDF8F5;
-            --text-dark: #2B2B2B;
-            --text-muted: #666666;
-            --border-color: #E6DCD3;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            --radius: 12px;
+            --bg-color: #394a35;
+            --canvas-deep: #263728;
+            --card-bg: rgba(242, 235, 218, 0.95);
+            --accent-gold: #c6a96d;
+            --accent-rose: #d7c5a4;
+            --accent-rose-light: rgba(231, 220, 197, 0.9);
+            --text-dark: #28352a;
+            --text-muted: #526052;
+            --border-color: rgba(218, 197, 153, 0.62);
+            --shadow: 0 18px 38px rgba(15, 24, 16, 0.22);
+            --radius: 6px;
         }
 
         * {
@@ -32,11 +33,26 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
-            background-image: radial-gradient(#E8D3C5 0.75px, transparent 0.75px);
-            background-size: 24px 24px;
+            background-image:
+                linear-gradient(180deg, rgba(24, 39, 26, 0.18) 0%, rgba(30, 46, 31, 0.08) 48%, rgba(24, 39, 26, 0.22) 100%),
+                url("images/statin_texture.png");
+            background-size: 100% 100%, 100% auto;
+            background-repeat: no-repeat, no-repeat;
+            background-position: center top, center top;
             color: var(--text-dark);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.38;
+            background: linear-gradient(90deg, rgba(15, 26, 17, 0.22), transparent 18%, transparent 82%, rgba(15, 26, 17, 0.22));
         }
 
         h1, h2, h3, .serif {
@@ -47,44 +63,71 @@
 
         /* Outer Frame Border matching invitation styling */
         .page-frame {
-            border: 1px solid var(--border-color);
-            margin: 15px;
+            border: 1px solid rgba(225, 207, 166, 0.48);
+            margin: 18px;
             padding: 10px;
-            border-radius: 16px;
-            background-color: rgba(250, 244, 240, 0.95);
-            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(31, 48, 32, 0.16), rgba(35, 51, 35, 0.08));
+            box-shadow: 0 24px 68px rgba(12, 21, 13, 0.28);
+            backdrop-filter: blur(1px);
+            position: relative;
+            z-index: 1;
         }
 
         /* Header / Banner */
         header {
             text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(180deg, var(--accent-rose-light) 0%, rgba(250, 244, 240, 0) 100%);
+            padding: 82px 20px 76px;
+            background-image:
+                linear-gradient(180deg, rgba(20, 35, 22, 0.18), rgba(25, 41, 27, 0.06) 48%, rgba(23, 38, 25, 0.42) 100%);
+            background-size: 100% 100%;
+            background-position: center top;
             border-radius: var(--radius);
-            margin-bottom: 20px;
+            margin-bottom: 0;
+            overflow: hidden;
+            position: relative;
+            isolation: isolate;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0;
+            height: 130px;
+            background: linear-gradient(180deg, transparent, rgba(36, 54, 37, 0.36));
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 1;
         }
 
         .couple-names {
             font-size: 2.5rem;
-            color: var(--accent-gold);
+            color: #e6cb91;
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 3px;
+            text-shadow: 0 2px 18px rgba(10, 20, 11, 0.32);
         }
 
         header h1 {
             font-size: 2.8rem;
-            color: var(--text-dark);
+            color: #f5efdf;
             line-height: 1.2;
             margin-bottom: 12px;
+            text-shadow: 0 2px 18px rgba(10, 20, 11, 0.4);
         }
 
         header p {
-            color: var(--text-muted);
+            color: rgba(246, 240, 225, 0.82);
             max-width: 580px;
             margin: 0 auto;
             font-size: 0.95rem;
             font-weight: 300;
+            text-shadow: 0 1px 14px rgba(10, 20, 11, 0.35);
         }
 
         /* Quick Info Bar */
@@ -93,25 +136,25 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 34px;
         }
 
         .info-pill {
-            background: var(--card-bg);
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--border-color);
+            background: rgba(30, 48, 31, 0.56);
+            padding: 9px 19px;
+            border-radius: 2px;
+            border: 1px solid rgba(225, 207, 166, 0.56);
             font-size: 0.85rem;
             letter-spacing: 0.5px;
-            color: var(--text-dark);
-            box-shadow: var(--shadow);
+            color: #f0e7d3;
+            box-shadow: 0 8px 22px rgba(12, 22, 13, 0.18);
         }
 
         /* Main Container */
         .container {
             max-width: 780px;
             margin: 0 auto;
-            padding: 20px 15px 60px;
+            padding: 38px 15px 66px;
         }
 
         /* Navigation Tabs */
@@ -119,9 +162,10 @@
             display: flex;
             gap: 10px;
             overflow-x: auto;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
+            padding: 0 0 16px;
+            margin-bottom: 36px;
             scrollbar-width: none;
+            border-bottom: 1px solid rgba(215, 197, 164, 0.35);
         }
 
         .nav-tabs::-webkit-scrollbar {
@@ -129,44 +173,46 @@
         }
 
         .tab-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 8px 18px;
-            border-radius: 20px;
+            background: rgba(28, 45, 30, 0.45);
+            border: 1px solid rgba(218, 197, 153, 0.48);
+            padding: 9px 17px;
+            border-radius: 2px;
             white-space: nowrap;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-muted);
+            color: #e4dac5;
             cursor: pointer;
             transition: all 0.25s ease;
         }
 
         .tab-btn.active, .tab-btn:hover {
             background: var(--accent-gold);
-            color: #FFFFFF;
+            color: #263328;
             border-color: var(--accent-gold);
         }
 
         /* QA Sections */
         .qa-section {
-            margin-bottom: 40px;
+            margin-bottom: 52px;
+            scroll-margin-top: 24px;
         }
 
         .section-title {
             font-size: 2rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--accent-rose);
+            color: #f0e6d0;
+            margin-bottom: 22px;
+            border-bottom: 1px solid rgba(215, 197, 164, 0.76);
             display: inline-block;
             padding-bottom: 4px;
+            text-shadow: 0 2px 12px rgba(12, 23, 13, 0.25);
         }
 
         /* Accordion Cards */
         .accordion-item {
             background: var(--card-bg);
-            border-radius: var(--radius);
-            margin-bottom: 14px;
+            border-radius: 4px;
+            margin-bottom: 13px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
             overflow: hidden;
@@ -179,7 +225,7 @@
 
         .accordion-header {
             width: 100%;
-            padding: 18px 22px;
+            padding: 19px 22px;
             background: none;
             border: none;
             text-align: left;
@@ -194,7 +240,7 @@
         }
 
         .accordion-icon {
-            font-size: 1.2rem;
+            font-size: 1.35rem;
             transition: transform 0.3s ease;
             color: var(--accent-gold);
             font-weight: 300;
@@ -233,29 +279,36 @@
             border-left: 3px solid var(--accent-gold);
             padding: 12px 16px;
             margin-top: 12px;
-            border-radius: 4px;
+            border-radius: 2px;
             font-size: 0.88rem;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
+            padding: 44px 20px 38px;
+            color: rgba(244, 237, 220, 0.8);
             font-size: 0.9rem;
+            border-top: 1px solid rgba(215, 197, 164, 0.28);
         }
 
         footer h2 {
             font-size: 2.2rem;
-            color: var(--accent-gold);
+            color: #e4c98e;
             margin-bottom: 8px;
         }
 
         @media (max-width: 600px) {
-            .page-frame { margin: 5px; padding: 5px; }
+            body { background-size: 100% 100%, auto 1846px; }
+            .page-frame { margin: 6px; padding: 5px; }
+            header { padding: 68px 16px 60px; background-position: 50% 42%; }
             header h1 { font-size: 2.2rem; }
             .couple-names { font-size: 2rem; }
+            .info-bar { gap: 10px; }
+            .info-pill { width: 100%; max-width: 310px; }
             .accordion-header { font-size: 0.95rem; padding: 16px; }
+            .accordion-content { padding-left: 16px; padding-right: 16px; }
+            .accordion-item.active .accordion-content { padding-left: 16px; padding-right: 16px; }
         }
     </style>
 </head>
